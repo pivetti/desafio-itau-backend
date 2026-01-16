@@ -1,42 +1,4 @@
-# 🚀 Desafio Itaú — API de Transações
-
-Esta é uma **API REST** desenvolvida em **Spring Boot**, projetada para o registro de transações financeiras e o cálculo de estatísticas em tempo real, utilizando uma **janela de tempo configurável** (padrão de **60 segundos**).
-
-O projeto foi construído com foco em **alta performance**, **boas práticas de backend** e **observabilidade**.
-
----
-
-## 🛠️ Tecnologias Utilizadas
-
-- **Java 17**
-- **Spring Boot 3**
-- **Spring Validation** — Validação de payloads
-- **Spring Boot Actuator** — Monitoramento de saúde da aplicação
-- **Springdoc OpenAPI (Swagger)** — Documentação interativa da API
-- **JUnit 5 & AssertJ** — Testes unitários e de integração
-- **Docker** — Conteinerização da aplicação
-- **Maven** — Gestão de dependências e build
-
----
-
-## 📋 Pré-requisitos
-
-Antes de começar, você precisará ter instalado:
-
-- **Java 17** ou superior  
-- **Maven 3.8+**  
-- **Docker** (opcional)
-
----
-
-## 📦 Como Construir o Projeto
-
-Na raiz do projeto, utilize o Maven para gerar o artefato:
-
-```bash
-mvn clean package
-```
-# 🚀 Desafio Itaú — API de Transações
+# 🚀 Desafio Itaú Backend: API de Transações
 
 Esta é uma API REST desenvolvida em Spring Boot projetada para o registro de transações financeiras e o cálculo de estatísticas em tempo real, utilizando uma janela de tempo configurável (padrão de 60 segundos). O projeto foi construído com foco em alta performance, boas práticas de backend e observabilidade.
 
