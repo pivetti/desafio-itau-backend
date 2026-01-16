@@ -1,73 +1,141 @@
-🚀 Desafio Itaú — API de Transações
-Esta é uma API REST desenvolvida em Spring Boot projetada para o registro de transações financeiras e o cálculo de estatísticas em tempo real, 
-utilizando uma janela de tempo configurável (padrão de 60 segundos). O projeto foi construído com foco em alta performance, boas práticas de backend, e observabilidade.
+# 🚀 Desafio Itaú — API de Transações
 
-🛠️ Tecnologias Utilizadas
-Java 17 & Spring Boot 3
-Spring Validation: Para validação de payloads.
-Spring Boot Actuator: Para monitoramento de saúde.
-Springdoc OpenAPI (Swagger): Documentação interativa.
-JUnit 5 & AssertJ: Testes unitários e de integração.
-Docker: Conteinerização da aplicação.
-Maven: Gestão de dependências e build.
+Esta é uma **API REST** desenvolvida em **Spring Boot**, projetada para o registro de transações financeiras e o cálculo de estatísticas em tempo real, utilizando uma **janela de tempo configurável** (padrão de **60 segundos**).
 
-📋 Pré-requisitos
+O projeto foi construído com foco em **alta performance**, **boas práticas de backend** e **observabilidade**.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- **Java 17**
+- **Spring Boot 3**
+- **Spring Validation** — Validação de payloads
+- **Spring Boot Actuator** — Monitoramento de saúde da aplicação
+- **Springdoc OpenAPI (Swagger)** — Documentação interativa da API
+- **JUnit 5 & AssertJ** — Testes unitários e de integração
+- **Docker** — Conteinerização da aplicação
+- **Maven** — Gestão de dependências e build
+
+---
+
+## 📋 Pré-requisitos
+
 Antes de começar, você precisará ter instalado:
-Java 17 ou superior
-Maven 3.8+
+
+- **Java 17** ou superior  
+- **Maven 3.8+**  
+- **Docker** (opcional)
+
+---
+
+## 📦 Como Construir o Projeto
+
+Na raiz do projeto, utilize o Maven para gerar o artefato:
+
+```bash
+mvn clean package
+```
+# 🚀 Desafio Itaú — API de Transações
+
+Esta é uma API REST desenvolvida em Spring Boot projetada para o registro de transações financeiras e o cálculo de estatísticas em tempo real, utilizando uma janela de tempo configurável (padrão de 60 segundos). O projeto foi construído com foco em alta performance, boas práticas de backend e observabilidade.
+
+## 🛠️ Tecnologias Utilizadas
+
+Java 17  
+Spring Boot 3  
+Spring Validation: Para validação de payloads  
+Spring Boot Actuator: Para monitoramento de saúde  
+Springdoc OpenAPI (Swagger): Documentação interativa  
+JUnit 5 & AssertJ: Testes unitários e de integração  
+Docker: Conteinerização da aplicação  
+Maven: Gestão de dependências e build  
+
+## 📋 Pré-requisitos
+
+Antes de começar, você precisará ter instalado:  
+Java 17 ou superior  
+Maven 3.8+  
 Docker (opcional)
 
-📦 Como Construir o Projeto
+## 📦 Como Construir o Projeto
+
 Na raiz do projeto, utilize o Maven para gerar o artefato:
-Bash
+
+```bash
 mvn clean package
+```
+
 Nota: Este comando executa os testes automatizados, compila o código e gera o arquivo .jar no diretório target/.
 
-▶️ Como Executar a Aplicação
-Opção 1: Via MavenBashmvn spring-boot:run
+## ▶️ Como Executar a Aplicação
+
+Opção 1: Via Maven
+
+```bash
+mvn spring-boot:run
+```
+
 Opção 2: Via JAR
-Bash
+
+```bash
 java -jar target/desafio-itau-3.jar
-A API ficará disponível em: http://localhost:8080
+```
+
+A API ficará disponível em:  
+http://localhost:8080
+
 Opção 3: Via Docker
-Bash
-# Build da imagem
+
+```bash
 docker build -t desafio_itau_3 .
-
-# Execução do container
 docker run -p 8080:8080 desafio_itau_3
-⚙️ Configurações
-📘 Documentação da API (Swagger)
+```
+
+## 📘 Documentação da API (Swagger)
+
 A API possui documentação interativa para facilitar o consumo e testes:
-Swagger UI: http://localhost:8080/swaggerOpenAPI 
-JSON: http://localhost:8080/api-docs
 
-❤️ Monitoramento e Erros
-Healthcheck
+Swagger UI: http://localhost:8080/swaggerOpenAPI  
+JSON: http://localhost:8080/api-docs  
+
+## ❤️ Monitoramento e Erros
+
+Healthcheck  
 Verifique a saúde da aplicação através do endpoint do Actuator:
-GET /actuator/healthTratamento de Erros
-A aplicação utiliza o padrão RFC 7807 (Problem Details for HTTP APIs). 
-Isso garante respostas de erro consistentes e claras:
 
-JSON{
+GET /actuator/health
+
+Tratamento de Erros  
+A aplicação utiliza o padrão RFC 7807 (Problem Details for HTTP APIs). Isso garante respostas de erro consistentes e claras:
+
+```json
+{
   "type": "https://example.com/problems/business-rule",
   "title": "Business rule violation",
   "status": 422,
   "detail": "Invalid transaction",
   "instance": "/transacao"
 }
+```
 
-🧪 Testes e Performance
+## 🧪 Testes e Performance
+
 Execução de Testes
-Bash
+
+```bash
 mvn test
+```
+
 A suíte de testes cobre casos de sucesso, erros de validação, regras de negócio e cenários de borda (ex: transações antigas).
 
-Análise de Performance
-Cálculo: Utiliza DoubleSummaryStatistics para processar métricas (soma, média, min, max, count).
-Complexidade de Tempo: $O(n)$, onde $n$ é o número de transações na janela ativa.
-Complexidade de Espaço: $O(1)$ para o objeto de estatísticas, mantendo eficiência mesmo sob carga.
-🏁 Considerações Finais
+Análise de Performance  
+Cálculo: Utiliza DoubleSummaryStatistics para processar métricas (soma, média, min, max, count).  
+Complexidade de Tempo: O(n), onde n é o número de transações na janela ativa.  
+Complexidade de Espaço: O(1) para o objeto de estatísticas, mantendo eficiência mesmo sob carga.
+
+## 🏁 Considerações Finais
+
 Este projeto demonstra a aplicação de conceitos sólidos de engenharia de software, incluindo separação de responsabilidades, observabilidade e containerização, visando um ambiente de produção robusto.
 
 Este projeto foi desenvolvido exclusivamente para fins de treinamento.
