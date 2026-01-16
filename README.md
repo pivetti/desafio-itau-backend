@@ -2,6 +2,8 @@
 
 Esta é uma API REST desenvolvida em Spring Boot projetada para o registro de transações financeiras e o cálculo de estatísticas em tempo real, utilizando uma janela de tempo configurável (padrão de 60 segundos). O projeto foi construído com foco em alta performance, boas práticas de backend e observabilidade.
 
+Link do desafio: https://github.com/feltex/desafio-itau-backend
+
 ## 🛠️ Tecnologias Utilizadas
 
 Java 17  
@@ -61,9 +63,9 @@ A API possui documentação interativa para facilitar o consumo e testes:
 Swagger UI: http://localhost:8080/swaggerOpenAPI  
 JSON: http://localhost:8080/api-docs  
 
-## ❤️ Monitoramento e Erros
+## ❤️ Monitoramento e Erros 
 
-Healthcheck  
+Healthcheck
 Verifique a saúde da aplicação através do endpoint do Actuator:
 
 GET /actuator/health
